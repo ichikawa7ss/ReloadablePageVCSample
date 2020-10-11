@@ -2,41 +2,75 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XPF-7j-yzw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Page View Controller-->
         <scene sceneID="r9f-XU-kuX">
             <objects>
-                <pageViewController storyboardIdentifier="initial" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="XPF-7j-yzw" customClass="PageViewController" customModule="DeletablePageVC" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="initial" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="XPF-7j-yzw" customClass="PageViewController" customModule="ReloadablePageViewControllerSample" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="4FP-UH-wwL"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bv4-Co-8ca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1228.985507246377" y="138.61607142857142"/>
         </scene>
-        <!--Chile Normal View Controller-->
+        <!--Chile Collection View Controller-->
         <scene sceneID="Ucj-5N-Dzc">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" id="Lzh-zi-EZQ" customClass="ChileNormalViewController" customModule="DeletablePageVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="Lzh-zi-EZQ" customClass="ChileCollectionViewController" customModule="ReloadablePageViewControllerSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zg6-s9-H6m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Normal ViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aR-ep-C2J">
-                                <rect key="frame" x="60.5" y="436" width="293" height="24"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nKQ-gH-d6r">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tBT-ZV-yIH">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="s4g-UG-TES">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1sg-Hc-Htb">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ0-LS-O1t">
+                                <rect key="frame" x="302" y="780" width="80" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z9-td-XRz">
+                                        <rect key="frame" x="13.5" y="10" width="53" height="30"/>
+                                        <state key="normal" title="Refresh"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="6Wi-lh-EJv"/>
+                                    <constraint firstItem="9z9-td-XRz" firstAttribute="centerY" secondItem="pJ0-LS-O1t" secondAttribute="centerY" id="KDR-Oo-fp0"/>
+                                    <constraint firstAttribute="height" constant="50" id="WlH-sl-ioG"/>
+                                    <constraint firstItem="9z9-td-XRz" firstAttribute="centerX" secondItem="pJ0-LS-O1t" secondAttribute="centerX" id="f5i-lg-EC9"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9aR-ep-C2J" firstAttribute="centerX" secondItem="zg6-s9-H6m" secondAttribute="centerX" id="0mh-Kw-Iwt"/>
-                            <constraint firstItem="9aR-ep-C2J" firstAttribute="centerY" secondItem="zg6-s9-H6m" secondAttribute="centerY" id="Lbg-XN-u1o"/>
+                            <constraint firstItem="wFK-Yw-AJ5" firstAttribute="trailing" secondItem="nKQ-gH-d6r" secondAttribute="trailing" id="3Bc-7L-DDL"/>
+                            <constraint firstItem="wFK-Yw-AJ5" firstAttribute="bottom" secondItem="nKQ-gH-d6r" secondAttribute="bottom" id="9KO-Vs-OJC"/>
+                            <constraint firstItem="wFK-Yw-AJ5" firstAttribute="bottom" secondItem="pJ0-LS-O1t" secondAttribute="bottom" constant="32" id="YOb-Vm-byz"/>
+                            <constraint firstItem="nKQ-gH-d6r" firstAttribute="top" secondItem="wFK-Yw-AJ5" secondAttribute="top" id="gpD-he-D9q"/>
+                            <constraint firstItem="nKQ-gH-d6r" firstAttribute="leading" secondItem="wFK-Yw-AJ5" secondAttribute="leading" id="jQI-3y-bLJ"/>
+                            <constraint firstItem="wFK-Yw-AJ5" firstAttribute="trailing" secondItem="pJ0-LS-O1t" secondAttribute="trailing" constant="32" id="oQO-wb-ISV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wFK-Yw-AJ5"/>
                     </view>
@@ -48,7 +82,7 @@
         <!--Child Table View Controller-->
         <scene sceneID="GBg-2b-wtx">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="Szz-Jp-Wtb" customClass="ChildTableViewController" customModule="DeletablePageVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="Szz-Jp-Wtb" customClass="ChildTableViewController" customModule="ReloadablePageViewControllerSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zTV-hs-V1s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="cRC-jm-Af0" customClass="ChildTableViewCell" customModule="DeletablePageVC" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="cRC-jm-Af0" customClass="ChildTableViewCell" customModule="ReloadablePageViewControllerSample" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cRC-jm-Af0" id="Wqx-SA-rdD">
@@ -84,9 +118,27 @@
                                     <outlet property="delegate" destination="Szz-Jp-Wtb" id="M0J-dH-0xW"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsw-6E-cSw">
+                                <rect key="frame" x="302" y="780" width="80" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoJ-mr-py7">
+                                        <rect key="frame" x="13.5" y="10" width="53" height="30"/>
+                                        <state key="normal" title="Refresh"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ZoJ-mr-py7" firstAttribute="centerX" secondItem="gsw-6E-cSw" secondAttribute="centerX" id="NOm-Fc-zbZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="Xbg-jT-5O6"/>
+                                    <constraint firstItem="ZoJ-mr-py7" firstAttribute="centerY" secondItem="gsw-6E-cSw" secondAttribute="centerY" id="ek6-aY-L0M"/>
+                                    <constraint firstAttribute="width" constant="80" id="rX7-gl-WwX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="qna-3h-US4" firstAttribute="bottom" secondItem="gsw-6E-cSw" secondAttribute="bottom" constant="32" id="5Yu-j1-a0E"/>
+                            <constraint firstItem="qna-3h-US4" firstAttribute="trailing" secondItem="gsw-6E-cSw" secondAttribute="trailing" constant="32" id="Zut-NY-GLo"/>
                             <constraint firstItem="rED-eY-HYs" firstAttribute="leading" secondItem="qna-3h-US4" secondAttribute="leading" id="gpl-ve-YzD"/>
                             <constraint firstItem="rED-eY-HYs" firstAttribute="top" secondItem="qna-3h-US4" secondAttribute="top" id="l2C-WN-Esd"/>
                             <constraint firstItem="rED-eY-HYs" firstAttribute="trailing" secondItem="qna-3h-US4" secondAttribute="trailing" id="qnm-ii-cuk"/>
