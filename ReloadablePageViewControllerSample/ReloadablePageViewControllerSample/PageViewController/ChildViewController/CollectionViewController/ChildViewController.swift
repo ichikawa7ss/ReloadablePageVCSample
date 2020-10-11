@@ -6,4 +6,11 @@
 //  Copyright © 2020 ichikawa. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class ChileNormalViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
