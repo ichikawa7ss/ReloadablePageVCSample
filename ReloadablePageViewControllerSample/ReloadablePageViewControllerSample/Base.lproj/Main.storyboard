@@ -18,10 +18,10 @@
             </objects>
             <point key="canvasLocation" x="1228.985507246377" y="138.61607142857142"/>
         </scene>
-        <!--Chile Collection View Controller-->
+        <!--Child Collection View Controller-->
         <scene sceneID="Ucj-5N-Dzc">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" id="Lzh-zi-EZQ" customClass="ChileCollectionViewController" customModule="ReloadablePageViewControllerSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="Lzh-zi-EZQ" customClass="ChildCollectionViewController" customModule="ReloadablePageViewControllerSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zg6-s9-H6m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,15 +36,34 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="s4g-UG-TES">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="s4g-UG-TES" customClass="ChildCollectionViewCell" customModule="ReloadablePageViewControllerSample" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1sg-Hc-Htb">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Nb-sW-FTS">
+                                                    <rect key="frame" x="43" y="53.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3Nb-sW-FTS" firstAttribute="centerY" secondItem="1sg-Hc-Htb" secondAttribute="centerY" id="tkh-X7-BeQ"/>
+                                                <constraint firstItem="3Nb-sW-FTS" firstAttribute="centerX" secondItem="1sg-Hc-Htb" secondAttribute="centerX" id="wUD-0U-Jre"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="3Nb-sW-FTS" id="lXM-va-NBF"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lzh-zi-EZQ" id="yW1-Ri-KkJ"/>
+                                    <outlet property="delegate" destination="Lzh-zi-EZQ" id="wez-ll-wza"/>
+                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ0-LS-O1t">
                                 <rect key="frame" x="302" y="780" width="80" height="50"/>
@@ -124,6 +143,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoJ-mr-py7">
                                         <rect key="frame" x="13.5" y="10" width="53" height="30"/>
                                         <state key="normal" title="Refresh"/>
+                                        <connections>
+                                            <action selector="tapRefreshButton:" destination="Szz-Jp-Wtb" eventType="touchUpInside" id="Uge-Fw-rFo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

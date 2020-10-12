@@ -17,6 +17,7 @@
 		7592170E2533BE76008EC379 /* ChildCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7592170D2533BE76008EC379 /* ChildCollectionViewController.swift */; };
 		759217102533BEA8008EC379 /* ChildTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7592170F2533BEA8008EC379 /* ChildTableViewController.swift */; };
 		759217132533BED1008EC379 /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759217122533BED1008EC379 /* ChildTableViewCell.swift */; };
+		759217152533C474008EC379 /* ChildCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759217142533C474008EC379 /* ChildCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7592170D2533BE76008EC379 /* ChildCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCollectionViewController.swift; sourceTree = "<group>"; };
 		7592170F2533BEA8008EC379 /* ChildTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTableViewController.swift; sourceTree = "<group>"; };
 		759217122533BED1008EC379 /* ChildTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
+		759217142533C474008EC379 /* ChildCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				7592170D2533BE76008EC379 /* ChildCollectionViewController.swift */,
+				759217142533C474008EC379 /* ChildCollectionViewCell.swift */,
 			);
 			path = CollectionViewController;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				759216F82533BC55008EC379 /* ViewController.swift in Sources */,
 				7592170E2533BE76008EC379 /* ChildCollectionViewController.swift in Sources */,
 				759216F42533BC55008EC379 /* AppDelegate.swift in Sources */,
+				759217152533C474008EC379 /* ChildCollectionViewCell.swift in Sources */,
 				759216F62533BC55008EC379 /* SceneDelegate.swift in Sources */,
 				759217102533BEA8008EC379 /* ChildTableViewController.swift in Sources */,
 				759217092533BE04008EC379 /* PageViewController.swift in Sources */,

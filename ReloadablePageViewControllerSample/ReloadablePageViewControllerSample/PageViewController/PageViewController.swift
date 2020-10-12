@@ -26,8 +26,8 @@ final class PageViewController: UIPageViewController {
         return nil
     }
     
-    func getFirst() -> ChileCollectionViewController {
-        return storyboard!.instantiateViewController(withIdentifier: "FirstViewController") as! ChileCollectionViewController
+    func getFirst() -> ChildCollectionViewController {
+        return storyboard!.instantiateViewController(withIdentifier: "FirstViewController") as! ChildCollectionViewController
     }
     
     func getSecond() -> ChildTableViewController {
@@ -52,7 +52,7 @@ extension PageViewController : UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if viewController.isKind(of: ChileCollectionViewController.self) {
+        if viewController.isKind(of: ChildCollectionViewController.self) {
             // 1 -> 2
             return getSecond()
         } else {

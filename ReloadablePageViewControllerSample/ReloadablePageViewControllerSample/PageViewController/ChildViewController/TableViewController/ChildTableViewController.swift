@@ -23,6 +23,10 @@ final class ChildTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func tapRefreshButton(_ sender: Any) {
+        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource
